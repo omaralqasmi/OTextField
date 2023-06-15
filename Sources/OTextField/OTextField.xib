@@ -12,9 +12,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTextField" customModule="OTextField">
             <connections>
                 <outlet property="btnPasswordVisibility" destination="tuf-Hq-59Y" id="TfB-hu-D1e"/>
+                <outlet property="constraintHeight" destination="3Vf-a3-4Mu" id="vi3-7V-MvC"/>
                 <outlet property="imgPostIcon" destination="kru-3U-heA" id="AoV-JW-6VL"/>
                 <outlet property="imgPreIcon" destination="4X2-Zz-jnc" id="N8S-jS-TnD"/>
-                <outlet property="lblErrorMessage" destination="g4h-dj-cD7" id="oR8-OT-wQd"/>
+                <outlet property="lblMessage" destination="g4h-dj-cD7" id="oR8-OT-wQd"/>
                 <outlet property="txtInputField" destination="l4x-tr-07L" id="zc9-ZH-2zA"/>
                 <outlet property="vwBorderLineView" destination="Ael-Nw-Kn1" id="Dm9-TG-cNv"/>
                 <outlet property="vwContentContainer" destination="wR3-cx-p8S" id="MMn-3E-1v6"/>
