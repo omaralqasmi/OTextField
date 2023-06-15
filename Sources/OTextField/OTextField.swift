@@ -90,7 +90,6 @@ public class OTextField: UIView {
                 imgPreIcon.isHidden = true
             }
         }
-        vwBorderLineView.backgroundColor = .lightGray
         txtInputField.delegate = self
         txtInputField.placeholder = placeHolder
         imgPostIcon.image = UIImage.init(named: "OTextField_eye.slash", in: .module, compatibleWith: nil)!
