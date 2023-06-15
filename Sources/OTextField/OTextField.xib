@@ -9,7 +9,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTextField" customModule="OTextField"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OTextField" customModule="OTextField">
+            <connections>
+                <outlet property="btnPasswordVisibility" destination="tuf-Hq-59Y" id="TfB-hu-D1e"/>
+                <outlet property="imgPostIcon" destination="kru-3U-heA" id="AoV-JW-6VL"/>
+                <outlet property="imgPreIcon" destination="4X2-Zz-jnc" id="N8S-jS-TnD"/>
+                <outlet property="lblErrorMessage" destination="g4h-dj-cD7" id="oR8-OT-wQd"/>
+                <outlet property="txtInputField" destination="l4x-tr-07L" id="zc9-ZH-2zA"/>
+                <outlet property="vwBorderLineView" destination="Ael-Nw-Kn1" id="Dm9-TG-cNv"/>
+                <outlet property="vwContentContainer" destination="wR3-cx-p8S" id="MMn-3E-1v6"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="612" height="221"/>
@@ -58,7 +68,7 @@
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <connections>
-                                                        <action selector="btnActionShowOrHidePassword:" destination="iN0-l3-epB" eventType="touchUpInside" id="4RF-tj-gCv"/>
+                                                        <action selector="btnActionPasswordVisibilty:" destination="-1" eventType="touchUpInside" id="o5k-Fe-GVO"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -120,15 +130,6 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wR3-cx-p8S" secondAttribute="trailing" id="v0d-RF-B40"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="btnShowAndHidePassword" destination="tuf-Hq-59Y" id="XM9-Ge-9xy"/>
-                <outlet property="imgPOST" destination="kru-3U-heA" id="Ex4-64-igN"/>
-                <outlet property="imgPRE" destination="4X2-Zz-jnc" id="vEG-ej-Ue3"/>
-                <outlet property="lblStatusMessage" destination="g4h-dj-cD7" id="43v-Xd-Uxb"/>
-                <outlet property="txtFieldInput" destination="l4x-tr-07L" id="Jr7-z5-JyM"/>
-                <outlet property="vwBorderLine" destination="Ael-Nw-Kn1" id="n32-dQ-GKG"/>
-                <outlet property="vwContainer" destination="wR3-cx-p8S" id="XDt-ZS-L1V"/>
-            </connections>
             <point key="canvasLocation" x="-241.22137404580153" y="-218.66197183098592"/>
         </view>
     </objects>
