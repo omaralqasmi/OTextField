@@ -175,7 +175,8 @@ extension UIView
     }
 }
 extension OTextField: UITextFieldDelegate {
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         clearMessage()
+        return true
     }
 }
