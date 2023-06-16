@@ -24,7 +24,7 @@ public class OTextField: UIView {
     var messageColor: UIColor = .gray
     var borderColor: UIColor = .lightGray
     var message: String? = nil
-    public static var oTextField: UITextField?
+    public var oTextField: UITextField?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,7 +55,7 @@ public class OTextField: UIView {
         errorColor: UIColor = .red
         
     ){
-        OTextField.oTextField = txtInputField
+        oTextField = txtInputField
         constraintHeight.constant = textFieldViewHeight
         vwBorderLineView.backgroundColor = borderColor
         imgPreIcon.tintColor = iconsColor
