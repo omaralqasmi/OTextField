@@ -15,7 +15,7 @@ public class OTextField: UIView {
     @IBOutlet weak var vwBorderLineView: UIView!
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var imgPreIcon: UIImageView!
-    @IBOutlet weak var txtInputField: UITextField!
+    @IBOutlet weak public static var txtInputField: UITextField!
     @IBOutlet weak var imgPostIcon: UIImageView!
     @IBOutlet weak var btnPasswordVisibility: UIButton!
     @IBOutlet weak var constraintHeight: NSLayoutConstraint!
