@@ -15,7 +15,7 @@ public class OTextField: UIView {
     @IBOutlet weak var vwBorderLineView: UIView!
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var imgPreIcon: UIImageView!
-    @IBOutlet weak public static var txtInputField: UITextField!
+    @IBOutlet weak var txtInputField: UITextField!
     @IBOutlet weak var imgPostIcon: UIImageView!
     @IBOutlet weak var btnPasswordVisibility: UIButton!
     @IBOutlet weak var constraintHeight: NSLayoutConstraint!
@@ -24,6 +24,7 @@ public class OTextField: UIView {
     var messageColor: UIColor = .gray
     var borderColor: UIColor = .lightGray
     var message: String? = nil
+    public static var oTextField: UITextField?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,6 +55,7 @@ public class OTextField: UIView {
         errorColor: UIColor = .red
         
     ){
+        OTextField.oTextField = txtInputField
         constraintHeight.constant = textFieldViewHeight
         vwBorderLineView.backgroundColor = borderColor
         imgPreIcon.tintColor = iconsColor
