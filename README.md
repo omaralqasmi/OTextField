@@ -12,9 +12,9 @@ To use this package, import `https://github.com/omaralqasmi/OTextField.git` in S
 ## Usage Example
 
 ### Step 1. add a UIView to your viewController ad give it hieght constraint with low priority
-    ![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602661-e70e35d8-53ed-4b27-83ee-56c831c08cf6.png)
+![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602661-e70e35d8-53ed-4b27-83ee-56c831c08cf6.png)
 ### Step 2. change the class of your UIView controller to OTextField and the module to OTextField
-    ![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602669-86194d68-a4f4-4e75-814f-cf3addf46b1f.png)
+![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602669-86194d68-a4f4-4e75-814f-cf3addf46b1f.png)
 ### Step 3. Connect your UIView outlet to your viewController class
 ### Step 4. import OTextField
 ```swift
@@ -56,4 +56,4 @@ or
         return true
     }
 ```
-    ![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602673-7eb74ddf-4a1e-4ef4-850a-f451d55cc6ae.png)
+![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602673-7eb74ddf-4a1e-4ef4-850a-f451d55cc6ae.png)
