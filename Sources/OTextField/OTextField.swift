@@ -55,6 +55,8 @@ public class OTextField: UIView {
         errorColor: UIColor = .red
         
     ){
+        txtInputField.keyboardType = .default
+        txtInputField.textContentType = .none
         constraintHeight.constant = textFieldViewHeight
         vwBorderLineView.backgroundColor = borderColor
         imgPreIcon.tintColor = iconsColor
@@ -72,19 +74,27 @@ public class OTextField: UIView {
         case .username:
             imgPreIcon.isHidden = false
             imgPreIcon.image = UIImage.init(named: "OTextField_person.fill", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .default
+            txtInputField.textContentType = .username
 
         case .email:
             imgPreIcon.isHidden = false
             imgPreIcon.image = UIImage.init(named: "OTextField_envelope.fill", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .emailAddress
+            txtInputField.textContentType = .emailAddress
 
         case .text:
             imgPreIcon.isHidden = false
             imgPreIcon.image = UIImage.init(named: "OTextField_square.and.pencil", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .default
+            txtInputField.textContentType = .none
 
         case .password:
             imgPreIcon.isHidden = false
             imgPreIcon.image = UIImage.init(named: "OTextField_lock.fill", in: .module, compatibleWith: nil)!
-            
+            txtInputField.keyboardType = .asciiCapable
+            txtInputField.textContentType = .password
+
         case .custom_requires_customPreImage:
             imgPreIcon.isHidden = false
             if customPreImage != nil {
@@ -94,6 +104,9 @@ public class OTextField: UIView {
             }else{
                 imgPreIcon.isHidden = true
             }
+            txtInputField.keyboardType = .default
+            txtInputField.textContentType = .none
+
         }
         txtInputField.delegate = self
         txtInputField.placeholder = placeHolder

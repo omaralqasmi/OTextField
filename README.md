@@ -1,6 +1,10 @@
 # OTextField
 An improved text field with simple features but essentials, includes  pre image, failure and success messages, and password eye ready
 
+![DEMO1](https://user-images.githubusercontent.com/36946797/246602624-a8617d05-dd9b-449a-81f9-d5e2fe4491b9.png)
+![DEMO2](https://user-images.githubusercontent.com/36946797/246602630-6271b8f3-f920-43bf-90d1-7c92300fd652.png)
+![DEMO3](https://user-images.githubusercontent.com/36946797/246602632-342e11d4-e07a-4766-8fdb-3349b155af97.png)
+
 ## Installiation
 To use this package, import `https://github.com/omaralqasmi/OTextField.git` in Swift Package Manager
 
@@ -8,7 +12,9 @@ To use this package, import `https://github.com/omaralqasmi/OTextField.git` in S
 ## Usage Example
 
 ### Step 1. add a UIView to your viewController ad give it hieght constraint with low priority
+    ![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602661-e70e35d8-53ed-4b27-83ee-56c831c08cf6.png)
 ### Step 2. change the class of your UIView controller to OTextField and the module to OTextField
+    ![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602669-86194d68-a4f4-4e75-814f-cf3addf46b1f.png)
 ### Step 3. Connect your UIView outlet to your viewController class
 ### Step 4. import OTextField
 ```swift
@@ -50,3 +56,4 @@ or
         return true
     }
 ```
+    ![OTEXTFIELD](https://user-images.githubusercontent.com/36946797/246602673-7eb74ddf-4a1e-4ef4-850a-f451d55cc6ae.png)

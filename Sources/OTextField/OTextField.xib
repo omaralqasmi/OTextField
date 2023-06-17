@@ -51,7 +51,7 @@
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-tr-07L">
                                                             <rect key="frame" x="34" y="0.0" width="521" height="51"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                                         </textField>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OTextField_eye.slash" translatesAutoresizingMaskIntoConstraints="NO" id="kru-3U-heA">
                                                             <rect key="frame" x="559" y="0.0" width="25" height="51"/>
