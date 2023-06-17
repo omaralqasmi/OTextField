@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,18 +38,18 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-IW-skm">
                                             <rect key="frame" x="2" y="2" width="608" height="51"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1HJ-zZ-UKW">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1HJ-zZ-UKW">
                                                     <rect key="frame" x="12" y="0.0" width="584" height="51"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OTextField_envelope.fill" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-Zz-jnc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="51"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OTextField_lock.fill" translatesAutoresizingMaskIntoConstraints="NO" id="4X2-Zz-jnc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="51"/>
                                                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="25" id="LEV-wt-R5J"/>
+                                                                <constraint firstAttribute="width" constant="30" id="LEV-wt-R5J"/>
                                                             </constraints>
                                                         </imageView>
                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4x-tr-07L">
-                                                            <rect key="frame" x="25" y="0.0" width="534" height="51"/>
+                                                            <rect key="frame" x="34" y="0.0" width="521" height="51"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -135,8 +135,8 @@
         </view>
     </objects>
     <resources>
-        <image name="OTextField_envelope.fill" width="21.5625" height="16.845699310302734"/>
         <image name="OTextField_eye.slash" width="26.68950080871582" height="18.281499862670898"/>
+        <image name="OTextField_lock.fill" width="13.046899795532227" height="19.619100570678711"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
