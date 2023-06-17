@@ -10,6 +10,7 @@ To use this package, import `https://github.com/omaralqasmi/OTextField.git` in S
 ### Step 1. add a UIView to your viewController ad give it hieght constraint with low priority
 ### Step 2. change the class of your UIView controller to OTextField and the module to OTextField
 ### Step 3. Connect your UIView outlet to your viewController class
+### Step 4. import OTextField
 ```swift
     @IBOutlet weak var oText: OTextField!
 ```

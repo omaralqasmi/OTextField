@@ -5,6 +5,7 @@ public enum OTextFieldPreImage{
     case username
     case email
     case text
+    case password
     case custom_requires_customPreImage
 }
 public class OTextField: UIView {
@@ -80,6 +81,10 @@ public class OTextField: UIView {
             imgPreIcon.isHidden = false
             imgPreIcon.image = UIImage.init(named: "OTextField_square.and.pencil", in: .module, compatibleWith: nil)!
 
+        case .password:
+            imgPreIcon.isHidden = false
+            imgPreIcon.image = UIImage.init(named: "OTextField_lock.fill", in: .module, compatibleWith: nil)!
+            
         case .custom_requires_customPreImage:
             imgPreIcon.isHidden = false
             if customPreImage != nil {
