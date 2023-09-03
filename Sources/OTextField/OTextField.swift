@@ -46,6 +46,7 @@ public class OTextField: UIView {
         customPreImage: UIImage? = nil,
         placeHolder: String,
         isPassword: Bool,
+        text: String = "",
         message: String? = nil,
         textFieldViewHeight: CGFloat = 55,
         borderColor: UIColor = .lightGray,
@@ -55,6 +56,7 @@ public class OTextField: UIView {
         errorColor: UIColor = .red
         
     ){
+        txtInputField.text = text
         txtInputField.keyboardType = .default
         txtInputField.textContentType = .none
         constraintHeight.constant = textFieldViewHeight
