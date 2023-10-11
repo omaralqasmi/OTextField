@@ -6,6 +6,10 @@ public enum OTextFieldPreImage{
     case email
     case text
     case password
+    case phone
+    case country
+    case bio
+    case image
     case custom_requires_customPreImage
 }
 public class OTextField: UIView {
@@ -14,6 +18,7 @@ public class OTextField: UIView {
     
     @IBOutlet weak var vwContentContainer: UIView!
     @IBOutlet weak var vwBorderLineView: UIView!
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var imgPreIcon: UIImageView!
     @IBOutlet weak public var txtInputField: UITextField!
@@ -22,10 +27,11 @@ public class OTextField: UIView {
     @IBOutlet weak var constraintHeight: NSLayoutConstraint!
     var successColor: UIColor = .green
     var errorColor: UIColor = .red
+    var titleColor: UIColor = .gray
     var messageColor: UIColor = .gray
     var borderColor: UIColor = .lightGray
     var message: String? = nil
-    
+    var selfHideTitleWhenNoTextEntered: Bool = true
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -44,18 +50,22 @@ public class OTextField: UIView {
     public func initText(
         preImage: OTextFieldPreImage,
         customPreImage: UIImage? = nil,
+        title: String,
         placeHolder: String,
-        isPassword: Bool,
+        hideTitleWhenNoTextEntered: Bool = true,
         text: String = "",
         message: String? = nil,
         textFieldViewHeight: CGFloat = 55,
         borderColor: UIColor = .lightGray,
         iconsColor: UIColor = .lightGray,
         messageColor: UIColor = .gray,
+        titleColor: UIColor = .gray,
         successColor: UIColor = .green,
         errorColor: UIColor = .red
         
     ){
+        selfHideTitleWhenNoTextEntered = hideTitleWhenNoTextEntered
+        lblTitle.text = title
         txtInputField.text = text
         txtInputField.keyboardType = .default
         txtInputField.textContentType = .none
@@ -67,8 +77,16 @@ public class OTextField: UIView {
         self.successColor = successColor
         self.errorColor = errorColor
         self.messageColor = messageColor
+        self.titleColor = titleColor
         self.message = message
+        lblTitle.textColor = titleColor
+
         messageLabel(message: message)
+        
+        btnPasswordVisibility.isHidden = true
+        imgPostIcon.isHidden = true
+        txtInputField.isSecureTextEntry = false
+
         switch preImage {
         case .none:
             imgPreIcon.isHidden = true
@@ -96,6 +114,33 @@ public class OTextField: UIView {
             imgPreIcon.image = UIImage.init(named: "OTextField_lock.fill", in: .module, compatibleWith: nil)!
             txtInputField.keyboardType = .asciiCapable
             txtInputField.textContentType = .password
+            btnPasswordVisibility.isHidden = false
+            imgPostIcon.isHidden = false
+            txtInputField.isSecureTextEntry = true
+
+        case .phone:
+            imgPreIcon.isHidden = false
+            imgPreIcon.image = UIImage.init(named: "OTextField_phone.fill", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .asciiCapableNumberPad
+            txtInputField.textContentType = .telephoneNumber
+
+        case .country:
+            imgPreIcon.isHidden = false
+            imgPreIcon.image = UIImage.init(named: "OTextField_globe.europe.africa.fill", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .asciiCapable
+            txtInputField.textContentType = .countryName
+
+        case .bio:
+            imgPreIcon.isHidden = false
+            imgPreIcon.image = UIImage.init(named: "OTextField_globe.europe.africa.fill", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .default
+            txtInputField.textContentType = .countryName
+
+        case .image:
+            imgPreIcon.isHidden = false
+            imgPreIcon.image = UIImage.init(named: "OTextField_photo", in: .module, compatibleWith: nil)!
+            txtInputField.keyboardType = .default
+            txtInputField.textContentType = .none
 
         case .custom_requires_customPreImage:
             imgPreIcon.isHidden = false
@@ -114,16 +159,17 @@ public class OTextField: UIView {
         txtInputField.placeholder = placeHolder
         imgPostIcon.image = UIImage.init(named: "OTextField_eye.slash", in: .module, compatibleWith: nil)!
         txtInputField.placeholder = placeHolder
-        if isPassword {
-            btnPasswordVisibility.isHidden = false
-            imgPostIcon.isHidden = false
-            txtInputField.isSecureTextEntry = true
-        }else{
-            btnPasswordVisibility.isHidden = true
-            imgPostIcon.isHidden = true
-            txtInputField.isSecureTextEntry = false
 
+        if selfHideTitleWhenNoTextEntered {
+            if txtInputField.text == "" {
+                lblTitle.isHidden = true
+            }else{
+                lblTitle.isHidden = false
+            }
+        }else{
+            lblTitle.isHidden = false
         }
+
         self.layoutSubviews()
 
     }
@@ -141,7 +187,7 @@ public class OTextField: UIView {
         return txtInputField.text ?? ""
     }
     public func failure(withMessage: String? = nil) {
-        
+        lblTitle.textColor = errorColor
         vwBorderLineView.backgroundColor = errorColor
         if withMessage != nil {
             lblMessage.isHidden = false
@@ -154,6 +200,7 @@ public class OTextField: UIView {
 
     }
     public func success(withMessage: String? = nil){
+        lblTitle.textColor = successColor
         vwBorderLineView.backgroundColor = successColor
         if withMessage != nil {
             lblMessage.isHidden = false
@@ -166,6 +213,7 @@ public class OTextField: UIView {
 
     }
     public func clearMessage(){
+        lblTitle.textColor = titleColor
         vwBorderLineView.backgroundColor = borderColor
         messageLabel(message: self.message)
 
@@ -197,6 +245,15 @@ extension UIView
 extension OTextField: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         clearMessage()
+        if selfHideTitleWhenNoTextEntered {
+            if txtInputField.text == "" {
+                lblTitle.isHidden = true
+            }else{
+                lblTitle.isHidden = false
+            }
+        }else{
+            lblTitle.isHidden = false
+        }
         return true
     }
 }
