@@ -12,8 +12,6 @@ public enum OTextFieldPreImage{
     case image
     case custom_requires_customPreImage
 }
-
-@IBDesignable
 public class OTextField: UIView {
 
     
@@ -229,15 +227,6 @@ public class OTextField: UIView {
             lblMessage.isHidden = true
         }
 
-    }
-    override public func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-
-        // Set up design-time appearance
-        // You can set properties like background color, text, and more.
-        self.backgroundColor = .lightGray
-        lblTitle.text = "Design-Time Title"
-        // Customize other properties as needed for design-time rendering.
     }
 
 }
