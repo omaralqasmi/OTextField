@@ -244,9 +244,13 @@ extension UIView
 }
 extension OTextField: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        superDelegateFunc(range: range, string: string)
+        return true
+    }
+    public func superDelegateFunc(range: NSRange, string: String){
         clearMessage()
         if selfHideTitleWhenNoTextEntered {
-            if txtInputField.text == "" {
+            if txtInputField.text == "" || (range.location == 0 && string == ""){
                 lblTitle.isHidden = true
             }else{
                 lblTitle.isHidden = false
@@ -254,6 +258,5 @@ extension OTextField: UITextFieldDelegate {
         }else{
             lblTitle.isHidden = false
         }
-        return true
     }
 }
