@@ -132,7 +132,7 @@ public class OTextField: UIView {
 
         case .bio:
             imgPreIcon.isHidden = false
-            imgPreIcon.image = UIImage.init(named: "OTextField_globe.europe.africa.fill", in: .module, compatibleWith: nil)!
+            imgPreIcon.image = UIImage.init(named: "OTextField_doc.append", in: .module, compatibleWith: nil)!
             txtInputField.keyboardType = .default
             txtInputField.textContentType = .countryName
 
