@@ -12,6 +12,8 @@ public enum OTextFieldPreImage{
     case image
     case custom_requires_customPreImage
 }
+
+@IBDesignable
 public class OTextField: UIView {
 
     
@@ -228,6 +230,15 @@ public class OTextField: UIView {
         }
 
     }
+    override public func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+
+        // Set up design-time appearance
+        // You can set properties like background color, text, and more.
+        self.backgroundColor = .lightGray
+        lblTitle.text = "Design-Time Title"
+        // Customize other properties as needed for design-time rendering.
+    }
 
 }
 extension UIView
@@ -250,7 +261,9 @@ extension OTextField: UITextFieldDelegate {
     public func superDelegateFunc(range: NSRange, string: String){
         clearMessage()
         if selfHideTitleWhenNoTextEntered {
-            if txtInputField.text == "" || (range.location == 0 && string == ""){
+            if string != "" {
+                lblTitle.isHidden = false
+            }else if txtInputField.text == "" || (range.location == 0 && string == ""){
                 lblTitle.isHidden = true
             }else{
                 lblTitle.isHidden = false
